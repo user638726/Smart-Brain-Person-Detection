@@ -252,7 +252,8 @@ class App extends Component {
 
       const response = await fetch(url.href);
       if (response) {
-        fetch("http://localhost:3000/image", {
+        const API_URL = import.meta.env.VITE_API_URL;
+        fetch(`${API_URL}/image`, {
           method: "PUT",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({

@@ -35,7 +35,8 @@ class Register extends Component<RegisterProps, RegisterState> {
     this.setState({password:event.target.value})
   }
   onSubmitSignIn=()=>{
-    fetch('http://localhost:3000/register',{
+    const API_URL = import.meta.env.VITE_API_URL;
+    fetch(`${API_URL}/register`,{
       method:'POST',
       headers:{'Content-Type':'application/json'},
       body:JSON.stringify({
